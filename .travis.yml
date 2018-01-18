@@ -2,29 +2,19 @@ language: php
 matrix:
   fast_finish: true
 php:
-  - 5.6
-  - 7.1
-
-# faster builds on new travis setup not using sudo
-sudo: false
-
-# cache vendor dirs
+- 7.1
 cache:
   directories:
-    - $HOME/.composer/cache
-    - vendor
+  - "$HOME/.composer/cache"
+  - vendor
 services:
 - mysql
 install:
-  - travis_retry composer self-update
-  - travis_retry mysql -e 'CREATE DATABASE test;'
-  - composer config -g github-oauth.github.com dcb6b0049723eb6f56039b2d6389ac76eb29e352
-  - travis_retry composer install --prefer-dist --no-interaction
-
+- composer config -g github-oauth.github.com caf16441da5ba578b34a765e67e3bf2ad1941389
+- travis_retry mysql -e 'CREATE DATABASE test;'
+- travis_retry composer self-update
 before_script:
-  - travis_retry composer self-update
-  - composer install --prefer-dist --dev --no-interaction
-
+- composer install --prefer-dist --dev --no-interaction
 script:
 - "./vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover"
 after_script:
