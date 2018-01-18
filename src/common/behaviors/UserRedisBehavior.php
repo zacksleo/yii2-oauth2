@@ -1,4 +1,5 @@
 <?php
+
 namespace zacksleo\yii2\oauth2\common\behaviors;
 
 use zacksleo\yii2\oauth2\common\predis\Predis;
@@ -7,7 +8,6 @@ use yii\db\ActiveRecord;
 
 class UserRedisBehavior extends Behavior
 {
-
     public function events()
     {
         return [

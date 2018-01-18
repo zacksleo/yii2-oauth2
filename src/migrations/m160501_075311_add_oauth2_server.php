@@ -4,7 +4,6 @@ use yii\db\Schema;
 
 class m160501_075311_add_oauth2_server extends \yii\db\Migration
 {
-
     public function mysql($yes, $no = '')
     {
         return $this->db->driverName === 'mysql' ? $yes : $no;
