@@ -1,0 +1,32 @@
+{
+  "name": "zacksleo/yii2-oauth2",
+  "description": "yii2 oauth2 module",
+  "type": "yii2-extension",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "zacksleo",
+      "email": "zacksleo@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "filsh/yii2-oauth2-server": "2.0.1.x-dev",
+    "monsterhunter/oauth2-redis": "^0.0.5",
+    "ramsey/uuid": "^3.7"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.34"
+  },
+  "autoload": {
+    "psr-4": {
+      "zacksleo\\yii2\\oauth2\\": "src"
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}
