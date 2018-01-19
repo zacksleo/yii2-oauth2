@@ -3,6 +3,7 @@ matrix:
   fast_finish: true
 php:
 - 7.1
+sudo: false
 cache:
   directories:
   - "$HOME/.composer/cache"
@@ -11,8 +12,8 @@ services:
 - mysql
 install:
 - travis_retry composer self-update
-- composer config -g github-oauth.github.com caf16441da5ba578b34a765e67e3bf2ad1941389
-- travis_retry composer install --prefer-dist
+- travis_retry composer config -g github-oauth.github.com caf16441da5ba578b34a765e67e3bf2ad1941389
+- travis_retry composer install --prefer-dist --no-interaction
 before_script:
 - travis_retry mysql -e 'CREATE DATABASE web;'
 - php tests/_app/yii.php migrate --migrationPath=@zacksleo/yii2/oauth2/migrations --interactive=0
