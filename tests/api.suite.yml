@@ -1,0 +1,18 @@
+class_name: ApiTester
+bootstrap: false
+modules:
+    enabled:
+        - Yii2:
+            configFile: '_app/common/config/test.php'
+        - Db:
+            dsn: mysql:host=mysql;dbname=web
+            user: root
+            password: ''
+            populate: true
+            cleanup: false
+            reconnect: true
+        - REST:
+            url: http://localhost:80/api/
+            depends: PhpBrowser
+            part: Json
+        

@@ -1,0 +1,12 @@
+# Codeception Test Suite Configuration
+
+# suite for unit (internal) tests.
+class_name: UnitTester
+bootstrap: false
+modules:
+    enabled:
+        - Yii2:
+            part: [fixtures,orm]
+            configFile: '_app/config/test.php'
+        - Asserts
+

@@ -11,12 +11,11 @@ services:
 - mysql
 install:
 - composer config -g github-oauth.github.com caf16441da5ba578b34a765e67e3bf2ad1941389
-- travis_retry mysql -e 'CREATE DATABASE test;'
-- travis_retry composer self-update
+ travis_retry composer install --prefer-dist
 before_script:
-- composer install --prefer-dist --dev --no-interaction
+- travis_retry mysql -e 'CREATE DATABASE web;'
+- php tests/_app/yii.php migrate --migrationPath=@zacksleo/yii2/oauth2/migrations --interactive=0
+- ~/.composer/vendor/bin/codecept build
+- php -S localhost:80 --docroot tests/_app/web &>/dev/null&
 script:
-- "./vendor/bin/phpunit --coverage-text --coverage-clover=coverage.clover"
-after_script:
-- wget https://scrutinizer-ci.com/ocular.phar
-- php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+- ~/.composer/vendor/bin/codecept run
