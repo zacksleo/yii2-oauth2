@@ -19,4 +19,4 @@ before_script:
 - php tests/_app/yii.php migrate --migrationPath=@zacksleo/yii2/oauth2/migrations --interactive=0
 - php -S localhost:80 --docroot tests/_app/api/web &>/dev/null&
 script:
-- ~/.composer/vendor/bin/codecept run -c tests
+- ./vendor/bin/codecept run -c tests
