@@ -4,7 +4,6 @@ return [
     'basePath' => dirname(__DIR__),
     'aliases' => [
         '@zacksleo/yii2/oauth2/' => dirname(dirname(dirname(__DIR__))),
-        '@tests' => dirname(dirname(__DIR__)),
     ],
     'components' => [
         'log' => null,

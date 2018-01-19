@@ -5,7 +5,6 @@ return [
     'language' => 'en-US',
     'aliases' => [
         '@zacksleo/yii2/oauth2' => dirname(dirname(dirname(__DIR__))),
-        '@tests' => dirname(dirname(__DIR__)),
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',
     ],
