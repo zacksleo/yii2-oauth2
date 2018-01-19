@@ -17,7 +17,6 @@ install:
 before_script:
 - travis_retry mysql -e 'CREATE DATABASE web;'
 - php tests/_app/yii.php migrate --migrationPath=@zacksleo/yii2/oauth2/migrations --interactive=0
-- ~/.composer/vendor/bin/codecept build
-- php -S localhost:80 --docroot tests/_app/web &>/dev/null&
+- php -S localhost:80 --docroot tests/_app/api/web &>/dev/null&
 script:
-- ~/.composer/vendor/bin/codecept run
+- ~/.composer/vendor/bin/codecept run -c tests
