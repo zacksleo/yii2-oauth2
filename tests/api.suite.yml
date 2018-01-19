@@ -5,7 +5,7 @@ modules:
         - Yii2:
             configFile: '_app/common/config/test.php'
         - Db:
-            dsn: mysql:host=mysql;dbname=web
+            dsn: mysql:host=localhost;dbname=web
             user: root
             password: ''
             populate: true

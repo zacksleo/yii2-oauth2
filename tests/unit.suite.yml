@@ -8,5 +8,12 @@ modules:
         - Yii2:
             part: [fixtures,orm]
             configFile: '_app/config/test.php'
+        - Db:
+            dsn: mysql:host=localhost;dbname=web
+            user: root
+            password: ''
+            populate: true
+            cleanup: false
+            reconnect: true
         - Asserts
 
