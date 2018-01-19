@@ -5,4 +5,5 @@ defined('STDIN') or define('STDIN', fopen('php://stdin', 'r'));
 defined('STDOUT') or define('STDOUT', fopen('php://stdout', 'w'));
 $config = require(__DIR__ . '/console/config/main.php');
 $exitCode = (new yii\console\Application($config))->run();
+
 exit($exitCode);
