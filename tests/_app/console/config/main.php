@@ -9,6 +9,6 @@ return [
     'components' => [
         'log' => null,
         'cache' => null,
-        'db' => require __DIR__ . '/db.php',
+        'db' => require __DIR__ . '../../common/config/db.php',
     ],
 ];
