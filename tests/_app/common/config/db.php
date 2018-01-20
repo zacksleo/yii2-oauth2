@@ -1,13 +1,10 @@
 <?php
 $db = [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=web',
-    'username' => 'root',
-    'password' => '',
+    'dsn' => $_ENV['DB_DSN'],
+    'username' => $_ENV['DB_USER'],
+    'password' => $_ENV['DB_PASSWORD'],
     'charset' => 'utf8',
 ];
-if (file_exists(__DIR__ . '/db.local.php')) {
-    $db = array_merge($db, require(__DIR__ . '/db.local.php'));
-}
 
 return $db;
