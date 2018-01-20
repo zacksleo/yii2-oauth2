@@ -2,7 +2,7 @@
 
 namespace zacksleo\yii2\oauth2\common\behaviors;
 
-use zacksleo\yii2\oauth2\common\predis\Predis;
+use zacksleo\yii2\oauth2\common\helpers\Predis;
 use yii\base\Behavior;
 use yii\db\ActiveRecord;
 

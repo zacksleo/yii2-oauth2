@@ -2,6 +2,8 @@
 
 namespace tests\api;
 
+use tests\fixtures\OauthClientsFixture;
+use tests\fixtures\UserFixture;
 use yii;
 
 class CestBase
@@ -9,11 +11,24 @@ class CestBase
     public $clientId = 'client_id';
     public $clientSecret = 'client_secret';
     public $username = 'username';
-    public $password = 'pa55w0rd';
-    public $phone = '18888888888';
-    public $email = 'username@lianluo.com';
-    public $smsCode = '123456';
+    public $password = 'password';
     public $accessToken;
+
+
+    public function _fixtures()
+    {
+        return [
+            'users' => [
+                'class' => UserFixture::className(),
+                'dataFile' => '@tests/fixtures/data/user.php'
+            ],
+            'clients' => [
+                'class' => OauthClientsFixture::className(),
+                'dataFile' => '@tests/fixtures/data/oauth_clients.php'
+            ]
+        ];
+    }
+
 
     /**
      * 生成随机手机号
@@ -55,22 +70,6 @@ class CestBase
             'grant_type' => 'client_credentials'
         ]);
         $this->accessToken = $I->grabDataFromResponseByJsonPath('access_token')[0];
-    }
-
-    /**
-     * 模拟发送短信验证码
-     */
-    protected function sendSmsCode()
-    {
-        Yii::$app->cache->set(Phone::phoneI18n($this->phone), $this->smsCode, 600);
-    }
-
-    /**
-     * 模拟发送邮箱验证码
-     */
-    protected function sendEmailCode()
-    {
-        Yii::$app->cache->set($this->email, $this->smsCode, 600);
     }
 
     /**

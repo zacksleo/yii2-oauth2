@@ -13,7 +13,7 @@ class Module extends BaseModule
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'zacksleo\yii2\oauth2\api\modules\client\v1\controllers';
+    public $controllerNamespace = 'zacksleo\yii2\oauth2\api\controllers';
 
     /**
      * @inheritdoc

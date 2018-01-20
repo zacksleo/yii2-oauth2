@@ -1,25 +1,48 @@
 <?php
 return [
-    'id' => 'yii2-user-tests',
+    'id' => 'app-common-tests',
     'basePath' => dirname(__DIR__),
-    'language' => 'en-US',
-    'aliases' => [
-        '@zacksleo/yii2/oauth2' => dirname(dirname(dirname(__DIR__))),
-        '@bower' => '@vendor/bower-asset',
-        '@npm' => '@vendor/npm-asset',
-    ],
     'components' => [
-        'db' => require __DIR__ . '/db.php',
-        'mailer' => [
-            'useFileTransport' => true,
+        'user' => [
+            'class' => 'yii\web\User',
+            'identityClass' => 'common\models\User',
         ],
-        'urlManager' => [
-            'showScriptName' => true,
+        'assetManager' => [
+            'basePath' => __DIR__ . '/../web/assets',
         ],
-        'request' => [
-            'cookieValidationKey' => 'test',
-            'enableCsrfValidation' => false,
-        ],
+        'redis' => [
+            'class' => 'yii\redis\Connection',
+            'hostname' => 'redis',
+            'port' => 6379,
+            'database' => 0,
+        ]
     ],
-    'params' => [],
+    'modules' => [
+        'oauth2' => [
+            'class' => 'filsh\yii2\oauth2server\Module',
+            'tokenParamName' => 'access_token',
+            'tokenAccessLifetime' => 3600 * 24 * 7,
+            'storageMap' => [
+                'user_credentials' => 'common\models\User',
+                'access_token' => 'common\models\storage\AccessToken',
+            ],
+            'grantTypes' => [
+                'client_credentials' => [
+                    'class' => 'OAuth2\GrantType\ClientCredentials',
+                    'allow_public_clients' => true
+                ],
+                'user_credentials' => [
+                    'class' => 'OAuth2\GrantType\UserCredentials',
+                ],
+                'refresh_token' => [
+                    'class' => 'OAuth2\GrantType\RefreshToken',
+                    'always_issue_new_refresh_token' => true,
+                ],
+                'authorization_code' => [
+                    'class' => 'OAuth2\GrantType\AuthorizationCode',
+                    'require_exact_redirect_uri' => false,
+                ]
+            ]
+        ]
+    ]
 ];

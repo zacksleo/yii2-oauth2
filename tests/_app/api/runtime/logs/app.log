@@ -1,0 +1,593 @@
+2018-01-20 11:01:04 [127.0.0.1][-][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2018-01-20 11:01:04 [127.0.0.1][-][-][trace][yii\web\UrlRule::parseRequest] Request parsed with URL rule: tokens
+2018-01-20 11:01:04 [127.0.0.1][-][-][trace][yii\rest\UrlRule::parseRequest] [
+    'rule' => 'POST tokens',
+    'match' => true,
+    'parent' => 'yii\\rest\\UrlRule',
+]
+2018-01-20 11:01:04 [127.0.0.1][-][-][trace][yii\web\UrlManager::parseRequest] [
+    'rule' => 'yii\\rest\\UrlRule',
+    'match' => true,
+    'parent' => null,
+]
+2018-01-20 11:01:04 [127.0.0.1][-][-][trace][yii\web\Application::handleRequest] Route requested: 'token/create'
+2018-01-20 11:01:04 [127.0.0.1][-][-][trace][yii\base\Controller::runAction] Route to run: token/create
+2018-01-20 11:01:04 [127.0.0.1][-][-][info][yii\filters\RateLimiter::beforeAction] Rate limit skipped: user not logged in.
+2018-01-20 11:01:04 [127.0.0.1][-][-][trace][yii\base\InlineAction::runWithParams] Running action: api\controllers\TokenController::actionCreate()
+2018-01-20 11:01:04 [127.0.0.1][-][-][trace][yii\base\Module::getModule] Loading module: oauth2
+    in /var/www/html/src/api/controllers/TokenController.php:24
+2018-01-20 11:01:04 [127.0.0.1][-][-][error][ReflectionException] ReflectionException: Class user_credentials does not exist in /var/www/html/vendor/yiisoft/yii2/di/Container.php:428
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/di/Container.php(428): ReflectionClass->__construct('user_credential...')
+#1 /var/www/html/vendor/yiisoft/yii2/di/Container.php(364): yii\di\Container->getDependencies('user_credential...')
+#2 /var/www/html/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('user_credential...', Array, Array)
+#3 /var/www/html/vendor/filsh/yii2-oauth2-server/Module.php(100): yii\di\Container->get('user_credential...')
+#4 /var/www/html/src/api/controllers/TokenController.php(24): filsh\yii2\oauth2server\Module->getServer()
+#5 [internal function]: zacksleo\yii2\oauth2\api\controllers\TokenController->actionCreate()
+#6 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#9 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('token/create', Array)
+#10 /var/www/html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/html/tests/_app/api/web/index.php(17): yii\base\Application->run()
+#12 {main}
+2018-01-20 11:01:04 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/var/www/html/tests/_app/api/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '53734'
+    'SERVER_SOFTWARE' => 'PHP 7.1.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '80'
+    'REQUEST_URI' => '/api/tokens'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/var/www/html/tests/_app/api/web/index.php'
+    'PATH_INFO' => '/api/tokens'
+    'PHP_SELF' => '/index.php/api/tokens'
+    'HTTP_HOST' => 'localhost:80'
+    'HTTP_USER_AGENT' => 'Symfony BrowserKit'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'CONTENT_LENGTH' => '91'
+    'HTTP_CONTENT_LENGTH' => '91'
+    'REQUEST_TIME_FLOAT' => 1516446064.2966
+    'REQUEST_TIME' => 1516446064
+    'argv' => []
+    'argc' => 0
+    'YII_DEBUG' => '1'
+    'YII_ENV' => 'dev'
+    'COOKIE_VALIDATION_KEY' => 'SeCrEt_DeV_Key--DO-NOT-USE-IN-PRODUCTION!'
+    'DB_DSN' => 'mysql:host=mysql;dbname=web'
+    'DB_USER' => 'web'
+    'DB_PASSWORD' => 'web'
+    'TOKEN_REDIS_HOST' => 'redis'
+    'TOKEN_REDIS_PORT' => '6379'
+    'TOKEN_REDIS_DATABASE' => '0'
+    'TOKEN_REDIS_PASSWORD' => 'null'
+    'REDIS_HOST' => 'redis'
+    'REDIS_PORT' => '6379'
+    'REDIS_DATABASE' => '0'
+]
+2018-01-20 11:08:15 [127.0.0.1][-][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2018-01-20 11:08:15 [127.0.0.1][-][-][trace][yii\web\UrlRule::parseRequest] Request parsed with URL rule: tokens
+2018-01-20 11:08:15 [127.0.0.1][-][-][trace][yii\rest\UrlRule::parseRequest] [
+    'rule' => 'POST tokens',
+    'match' => true,
+    'parent' => 'yii\\rest\\UrlRule',
+]
+2018-01-20 11:08:15 [127.0.0.1][-][-][trace][yii\web\UrlManager::parseRequest] [
+    'rule' => 'yii\\rest\\UrlRule',
+    'match' => true,
+    'parent' => null,
+]
+2018-01-20 11:08:15 [127.0.0.1][-][-][trace][yii\web\Application::handleRequest] Route requested: 'token/create'
+2018-01-20 11:08:15 [127.0.0.1][-][-][trace][yii\base\Controller::runAction] Route to run: token/create
+2018-01-20 11:08:16 [127.0.0.1][-][-][info][yii\filters\RateLimiter::beforeAction] Rate limit skipped: user not logged in.
+2018-01-20 11:08:16 [127.0.0.1][-][-][trace][yii\base\InlineAction::runWithParams] Running action: api\controllers\TokenController::actionCreate()
+2018-01-20 11:08:16 [127.0.0.1][-][-][trace][yii\base\Module::getModule] Loading module: oauth2
+    in /var/www/html/src/api/controllers/TokenController.php:24
+2018-01-20 11:08:16 [127.0.0.1][-][-][error][ReflectionException] ReflectionException: Class user_credentials does not exist in /var/www/html/vendor/yiisoft/yii2/di/Container.php:428
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/di/Container.php(428): ReflectionClass->__construct('user_credential...')
+#1 /var/www/html/vendor/yiisoft/yii2/di/Container.php(364): yii\di\Container->getDependencies('user_credential...')
+#2 /var/www/html/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('user_credential...', Array, Array)
+#3 /var/www/html/vendor/filsh/yii2-oauth2-server/Module.php(100): yii\di\Container->get('user_credential...')
+#4 /var/www/html/src/api/controllers/TokenController.php(24): filsh\yii2\oauth2server\Module->getServer()
+#5 [internal function]: zacksleo\yii2\oauth2\api\controllers\TokenController->actionCreate()
+#6 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#9 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('token/create', Array)
+#10 /var/www/html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/html/tests/_app/api/web/index.php(17): yii\base\Application->run()
+#12 {main}
+2018-01-20 11:08:15 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/var/www/html/tests/_app/api/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '53744'
+    'SERVER_SOFTWARE' => 'PHP 7.1.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '80'
+    'REQUEST_URI' => '/api/tokens'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/var/www/html/tests/_app/api/web/index.php'
+    'PATH_INFO' => '/api/tokens'
+    'PHP_SELF' => '/index.php/api/tokens'
+    'HTTP_HOST' => 'localhost:80'
+    'HTTP_USER_AGENT' => 'Symfony BrowserKit'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'CONTENT_LENGTH' => '91'
+    'HTTP_CONTENT_LENGTH' => '91'
+    'REQUEST_TIME_FLOAT' => 1516446495.6268
+    'REQUEST_TIME' => 1516446495
+    'argv' => []
+    'argc' => 0
+    'YII_DEBUG' => '1'
+    'YII_ENV' => 'dev'
+    'COOKIE_VALIDATION_KEY' => 'SeCrEt_DeV_Key--DO-NOT-USE-IN-PRODUCTION!'
+    'DB_DSN' => 'mysql:host=mysql;dbname=web'
+    'DB_USER' => 'web'
+    'DB_PASSWORD' => 'web'
+    'TOKEN_REDIS_HOST' => 'redis'
+    'TOKEN_REDIS_PORT' => '6379'
+    'TOKEN_REDIS_DATABASE' => '0'
+    'TOKEN_REDIS_PASSWORD' => 'null'
+    'REDIS_HOST' => 'redis'
+    'REDIS_PORT' => '6379'
+    'REDIS_DATABASE' => '0'
+]
+2018-01-20 11:13:12 [127.0.0.1][-][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2018-01-20 11:13:12 [127.0.0.1][-][-][trace][yii\web\UrlRule::parseRequest] Request parsed with URL rule: tokens
+2018-01-20 11:13:12 [127.0.0.1][-][-][trace][yii\rest\UrlRule::parseRequest] [
+    'rule' => 'POST tokens',
+    'match' => true,
+    'parent' => 'yii\\rest\\UrlRule',
+]
+2018-01-20 11:13:12 [127.0.0.1][-][-][trace][yii\web\UrlManager::parseRequest] [
+    'rule' => 'yii\\rest\\UrlRule',
+    'match' => true,
+    'parent' => null,
+]
+2018-01-20 11:13:12 [127.0.0.1][-][-][trace][yii\web\Application::handleRequest] Route requested: 'token/create'
+2018-01-20 11:13:12 [127.0.0.1][-][-][trace][yii\base\Controller::runAction] Route to run: token/create
+2018-01-20 11:13:12 [127.0.0.1][-][-][info][yii\filters\RateLimiter::beforeAction] Rate limit skipped: user not logged in.
+2018-01-20 11:13:12 [127.0.0.1][-][-][trace][yii\base\InlineAction::runWithParams] Running action: api\controllers\TokenController::actionCreate()
+2018-01-20 11:13:12 [127.0.0.1][-][-][trace][yii\base\Module::getModule] Loading module: oauth2
+    in /var/www/html/src/api/controllers/TokenController.php:24
+2018-01-20 11:13:12 [127.0.0.1][-][-][error][ReflectionException] ReflectionException: Class user_credentials does not exist in /var/www/html/vendor/yiisoft/yii2/di/Container.php:428
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/di/Container.php(428): ReflectionClass->__construct('user_credential...')
+#1 /var/www/html/vendor/yiisoft/yii2/di/Container.php(364): yii\di\Container->getDependencies('user_credential...')
+#2 /var/www/html/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('user_credential...', Array, Array)
+#3 /var/www/html/vendor/filsh/yii2-oauth2-server/Module.php(100): yii\di\Container->get('user_credential...')
+#4 /var/www/html/src/api/controllers/TokenController.php(24): filsh\yii2\oauth2server\Module->getServer()
+#5 [internal function]: zacksleo\yii2\oauth2\api\controllers\TokenController->actionCreate()
+#6 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('create', Array)
+#9 /var/www/html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('token/create', Array)
+#10 /var/www/html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/html/tests/_app/api/web/index.php(17): yii\base\Application->run()
+#12 {main}
+2018-01-20 11:13:12 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'DOCUMENT_ROOT' => '/var/www/html/tests/_app/api/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '53758'
+    'SERVER_SOFTWARE' => 'PHP 7.1.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '80'
+    'REQUEST_URI' => '/api/tokens'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/var/www/html/tests/_app/api/web/index.php'
+    'PATH_INFO' => '/api/tokens'
+    'PHP_SELF' => '/index.php/api/tokens'
+    'HTTP_HOST' => 'localhost:80'
+    'HTTP_USER_AGENT' => 'Symfony BrowserKit'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'CONTENT_LENGTH' => '91'
+    'HTTP_CONTENT_LENGTH' => '91'
+    'REQUEST_TIME_FLOAT' => 1516446792.2081
+    'REQUEST_TIME' => 1516446792
+    'argv' => []
+    'argc' => 0
+    'YII_DEBUG' => '1'
+    'YII_ENV' => 'dev'
+    'COOKIE_VALIDATION_KEY' => 'SeCrEt_DeV_Key--DO-NOT-USE-IN-PRODUCTION!'
+    'DB_DSN' => 'mysql:host=mysql;dbname=web'
+    'DB_USER' => 'web'
+    'DB_PASSWORD' => 'web'
+    'TOKEN_REDIS_HOST' => 'redis'
+    'TOKEN_REDIS_PORT' => '6379'
+    'TOKEN_REDIS_DATABASE' => '0'
+    'TOKEN_REDIS_PASSWORD' => 'null'
+    'REDIS_HOST' => 'redis'
+    'REDIS_PORT' => '6379'
+    'REDIS_DATABASE' => '0'
+]
+2018-01-20 13:33:07 [127.0.0.1][-][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2018-01-20 13:33:07 [127.0.0.1][-][-][trace][yii\web\UrlRule::parseRequest] Request parsed with URL rule: tokens
+2018-01-20 13:33:07 [127.0.0.1][-][-][trace][yii\rest\UrlRule::parseRequest] [
+    'rule' => 'POST tokens',
+    'match' => true,
+    'parent' => 'yii\\rest\\UrlRule',
+]
+2018-01-20 13:33:07 [127.0.0.1][-][-][trace][yii\web\UrlManager::parseRequest] [
+    'rule' => 'yii\\rest\\UrlRule',
+    'match' => true,
+    'parent' => null,
+]
+2018-01-20 13:33:07 [127.0.0.1][-][-][trace][yii\web\Application::handleRequest] Route requested: 'token/create'
+2018-01-20 13:33:07 [127.0.0.1][-][-][trace][yii\base\Controller::runAction] Route to run: token/create
+2018-01-20 13:33:07 [127.0.0.1][-][-][info][yii\filters\RateLimiter::beforeAction] Rate limit skipped: user not logged in.
+2018-01-20 13:33:07 [127.0.0.1][-][-][trace][yii\base\InlineAction::runWithParams] Running action: api\controllers\TokenController::actionCreate()
+2018-01-20 13:33:07 [127.0.0.1][-][-][trace][yii\base\Module::getModule] Loading module: oauth2
+    in /var/www/html/src/api/controllers/TokenController.php:24
+2018-01-20 13:33:07 [127.0.0.1][-][-][error][ReflectionException] ReflectionException: Class user_credentials does not exist in /var/www/html/vendor/yiisoft/yii2/di/Container.php:424
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/di/Container.php(424): ReflectionClass->__construct('user_credential...')
+#1 /var/www/html/vendor/yiisoft/yii2/di/Container.php(364): yii\di\Container->getDependencies('user_credential...')
+#2 /var/www/html/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('user_credential...', Array, Array)
+#3 /var/www/html/vendor/filsh/yii2-oauth2-server/Module.php(100): yii\di\Container->get('user_credential...')
+#4 /var/www/html/src/api/controllers/TokenController.php(24): filsh\yii2\oauth2server\Module->getServer()
+#5 [internal function]: zacksleo\yii2\oauth2\api\controllers\TokenController->actionCreate()
+#6 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#7 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#8 /var/www/html/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('create', Array)
+#9 /var/www/html/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('token/create', Array)
+#10 /var/www/html/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /var/www/html/tests/_app/api/web/index.php(17): yii\base\Application->run()
+#12 {main}
+2018-01-20 13:33:06 [127.0.0.1][-][-][info][application] $_SERVER = [
+    'DOCUMENT_ROOT' => '/var/www/html/tests/_app/api/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '54012'
+    'SERVER_SOFTWARE' => 'PHP 7.1.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '80'
+    'REQUEST_URI' => '/api/tokens'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/var/www/html/tests/_app/api/web/index.php'
+    'PATH_INFO' => '/api/tokens'
+    'PHP_SELF' => '/index.php/api/tokens'
+    'HTTP_HOST' => 'localhost:80'
+    'HTTP_USER_AGENT' => 'Symfony BrowserKit'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'CONTENT_LENGTH' => '91'
+    'HTTP_CONTENT_LENGTH' => '91'
+    'REQUEST_TIME_FLOAT' => 1516455186.8234
+    'REQUEST_TIME' => 1516455186
+    'argv' => []
+    'argc' => 0
+    'YII_DEBUG' => '1'
+    'YII_ENV' => 'dev'
+    'COOKIE_VALIDATION_KEY' => 'SeCrEt_DeV_Key--DO-NOT-USE-IN-PRODUCTION!'
+    'DB_DSN' => 'mysql:host=mysql;dbname=web'
+    'DB_USER' => 'web'
+    'DB_PASSWORD' => 'web'
+    'TOKEN_REDIS_HOST' => 'redis'
+    'TOKEN_REDIS_PORT' => '6379'
+    'TOKEN_REDIS_DATABASE' => '0'
+    'TOKEN_REDIS_PASSWORD' => 'null'
+    'REDIS_HOST' => 'redis'
+    'REDIS_PORT' => '6379'
+    'REDIS_DATABASE' => '0'
+]
+2018-01-20 13:48:13 [127.0.0.1][-][-][trace][yii\base\Application::bootstrap] Bootstrap with filsh\yii2\oauth2server\Bootstrap::bootstrap()
+2018-01-20 13:48:13 [127.0.0.1][-][-][trace][yii\base\Module::getModule] Loading module: oauth2
+2018-01-20 13:48:13 [127.0.0.1][-][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2018-01-20 13:48:13 [127.0.0.1][-][-][trace][yii\web\UrlRule::parseRequest] Request parsed with URL rule: tokens
+2018-01-20 13:48:13 [127.0.0.1][-][-][trace][yii\rest\UrlRule::parseRequest] [
+    'rule' => 'POST tokens',
+    'match' => true,
+    'parent' => 'yii\\rest\\UrlRule',
+]
+2018-01-20 13:48:13 [127.0.0.1][-][-][trace][yii\web\UrlManager::parseRequest] [
+    'rule' => 'yii\\rest\\UrlRule',
+    'match' => true,
+    'parent' => null,
+]
+2018-01-20 13:48:13 [127.0.0.1][-][-][trace][yii\web\Application::handleRequest] Route requested: 'token/create'
+2018-01-20 13:48:13 [127.0.0.1][-][-][trace][yii\base\Controller::runAction] Route to run: token/create
+2018-01-20 13:48:13 [127.0.0.1][-][-][info][yii\filters\RateLimiter::beforeAction] Rate limit skipped: user not logged in.
+2018-01-20 13:48:13 [127.0.0.1][-][-][trace][yii\base\InlineAction::runWithParams] Running action: api\controllers\TokenController::actionCreate()
+2018-01-20 13:48:13 [127.0.0.1][-][-][info][yii\db\Connection::open] Opening DB connection: mysql:host=mysql;dbname=web
+    in /var/www/html/vendor/filsh/yii2-oauth2-server/storage/Pdo.php:25
+    in /var/www/html/vendor/filsh/yii2-oauth2-server/Module.php:105
+    in /var/www/html/src/api/controllers/TokenController.php:24
+2018-01-20 13:48:14 [127.0.0.1][-][-][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `user`
+    in /var/www/html/tests/_app/common/models/User.php:56
+    in /var/www/html/src/common/models/storage/AccessToken.php:22
+    in /var/www/html/vendor/bshaffer/oauth2-server-php/src/OAuth2/ResponseType/AccessToken.php:103
+2018-01-20 13:48:14 [127.0.0.1][-][-][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'user' AND kcu.table_name = 'user'
+    in /var/www/html/tests/_app/common/models/User.php:56
+    in /var/www/html/src/common/models/storage/AccessToken.php:22
+    in /var/www/html/vendor/bshaffer/oauth2-server-php/src/OAuth2/ResponseType/AccessToken.php:103
+2018-01-20 13:48:14 [127.0.0.1][-][-][info][yii\db\Command::query] SELECT * FROM `user` WHERE `id`='1'
+    in /var/www/html/tests/_app/common/models/User.php:56
+    in /var/www/html/src/common/models/storage/AccessToken.php:22
+    in /var/www/html/vendor/bshaffer/oauth2-server-php/src/OAuth2/ResponseType/AccessToken.php:103
+2018-01-20 13:48:14 [127.0.0.1][-][-][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: common\models\User::union_id in /var/www/html/vendor/yiisoft/yii2/base/Component.php:147
+Stack trace:
+#0 /var/www/html/vendor/yiisoft/yii2/db/BaseActiveRecord.php(285): yii\base\Component->__get('union_id')
+#1 /var/www/html/src/common/models/storage/AccessToken.php(29): yii\db\BaseActiveRecord->__get('union_id')
+#2 /var/www/html/vendor/bshaffer/oauth2-server-php/src/OAuth2/ResponseType/AccessToken.php(103): zacksleo\yii2\oauth2\common\models\storage\AccessToken->setAccessToken('ab77ffba1d7e29b...', 'client_id', '1', 1517060893, NULL)
+#3 /var/www/html/vendor/bshaffer/oauth2-server-php/src/OAuth2/GrantType/ClientCredentials.php(89): OAuth2\ResponseType\AccessToken->createAccessToken('client_id', '1', NULL, false)
+#4 /var/www/html/vendor/bshaffer/oauth2-server-php/src/OAuth2/Controller/TokenController.php(251): OAuth2\GrantType\ClientCredentials->createAccessToken(Object(OAuth2\ResponseType\AccessToken), 'client_id', '1', NULL)
+#5 /var/www/html/vendor/bshaffer/oauth2-server-php/src/OAuth2/Controller/TokenController.php(87): OAuth2\Controller\TokenController->grantAccessToken(Object(filsh\yii2\oauth2server\Request), Object(OAuth2\Response))
+#6 /var/www/html/vendor/bshaffer/oauth2-server-php/src/OAuth2/Server.php(319): OAuth2\Controller\TokenController->handleTokenRequest(Object(filsh\yii2\oauth2server\Request), Object(OAuth2\Response))
+#7 /var/www/html/vendor/filsh/yii2-oauth2-server/Server.php(39): OAuth2\Server->handleTokenRequest(Object(filsh\yii2\oauth2server\Request), NULL)
+#8 /var/www/html/src/api/controllers/TokenController.php(24): filsh\yii2\oauth2server\Server->handleTokenRequest()
+#9 [internal function]: zacksleo\yii2\oauth2\api\controllers\TokenController->actionCreate()
+#10 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#12 /var/www/html/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('create', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('token/create', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 /var/www/html/tests/_app/api/web/index.php(17): yii\base\Application->run()
+#16 {main}
+2018-01-20 13:48:13 [127.0.0.1][-][-][info][application] $_SERVER = [
+    'DOCUMENT_ROOT' => '/var/www/html/tests/_app/api/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '54042'
+    'SERVER_SOFTWARE' => 'PHP 7.1.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '80'
+    'REQUEST_URI' => '/api/tokens'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/var/www/html/tests/_app/api/web/index.php'
+    'PATH_INFO' => '/api/tokens'
+    'PHP_SELF' => '/index.php/api/tokens'
+    'HTTP_HOST' => 'localhost:80'
+    'HTTP_USER_AGENT' => 'Symfony BrowserKit'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'CONTENT_LENGTH' => '91'
+    'HTTP_CONTENT_LENGTH' => '91'
+    'REQUEST_TIME_FLOAT' => 1516456093.3653
+    'REQUEST_TIME' => 1516456093
+    'argv' => []
+    'argc' => 0
+    'YII_DEBUG' => '1'
+    'YII_ENV' => 'dev'
+    'COOKIE_VALIDATION_KEY' => 'SeCrEt_DeV_Key--DO-NOT-USE-IN-PRODUCTION!'
+    'DB_DSN' => 'mysql:host=mysql;dbname=web'
+    'DB_USER' => 'web'
+    'DB_PASSWORD' => 'web'
+    'TOKEN_REDIS_HOST' => 'redis'
+    'TOKEN_REDIS_PORT' => '6379'
+    'TOKEN_REDIS_DATABASE' => '0'
+    'TOKEN_REDIS_PASSWORD' => 'null'
+    'REDIS_HOST' => 'redis'
+    'REDIS_PORT' => '6379'
+    'REDIS_DATABASE' => '0'
+]
+2018-01-20 13:57:20 [127.0.0.1][-][-][trace][yii\base\Application::bootstrap] Bootstrap with filsh\yii2\oauth2server\Bootstrap::bootstrap()
+2018-01-20 13:57:20 [127.0.0.1][-][-][trace][yii\base\Module::getModule] Loading module: oauth2
+2018-01-20 13:57:20 [127.0.0.1][-][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2018-01-20 13:57:20 [127.0.0.1][-][-][trace][yii\web\UrlRule::parseRequest] Request parsed with URL rule: tokens
+2018-01-20 13:57:20 [127.0.0.1][-][-][trace][yii\rest\UrlRule::parseRequest] [
+    'rule' => 'POST tokens',
+    'match' => true,
+    'parent' => 'yii\\rest\\UrlRule',
+]
+2018-01-20 13:57:20 [127.0.0.1][-][-][trace][yii\web\UrlManager::parseRequest] [
+    'rule' => 'yii\\rest\\UrlRule',
+    'match' => true,
+    'parent' => null,
+]
+2018-01-20 13:57:20 [127.0.0.1][-][-][trace][yii\web\Application::handleRequest] Route requested: 'token/create'
+2018-01-20 13:57:20 [127.0.0.1][-][-][trace][yii\base\Controller::runAction] Route to run: token/create
+2018-01-20 13:57:20 [127.0.0.1][-][-][info][yii\filters\RateLimiter::beforeAction] Rate limit skipped: user not logged in.
+2018-01-20 13:57:20 [127.0.0.1][-][-][trace][yii\base\InlineAction::runWithParams] Running action: api\controllers\TokenController::actionCreate()
+2018-01-20 13:57:20 [127.0.0.1][-][-][error][ParseError] ParseError: syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /var/www/html/src/common/models/storage/AccessToken.php:23
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('zacksleo\\yii2\\o...')
+#1 [internal function]: spl_autoload_call('zacksleo\\yii2\\o...')
+#2 /var/www/html/vendor/yiisoft/yii2/di/Container.php(424): ReflectionClass->__construct('zacksleo\\yii2\\o...')
+#3 /var/www/html/vendor/yiisoft/yii2/di/Container.php(364): yii\di\Container->getDependencies('zacksleo\\yii2\\o...')
+#4 /var/www/html/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('zacksleo\\yii2\\o...', Array, Array)
+#5 /var/www/html/vendor/yiisoft/yii2/di/Container.php(174): yii\di\Container->get('zacksleo\\yii2\\o...', Array, Array)
+#6 /var/www/html/vendor/filsh/yii2-oauth2-server/Module.php(105): yii\di\Container->get('access_token')
+#7 /var/www/html/src/api/controllers/TokenController.php(24): filsh\yii2\oauth2server\Module->getServer()
+#8 [internal function]: zacksleo\yii2\oauth2\api\controllers\TokenController->actionCreate()
+#9 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#10 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('create', Array)
+#12 /var/www/html/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('token/create', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#14 /var/www/html/tests/_app/api/web/index.php(17): yii\base\Application->run()
+#15 {main}
+
+Next ParseError: syntax error, unexpected -> (T_OBJECT_OPERATOR) in /var/www/html/src/common/models/storage/AccessToken.php:23
+Stack trace:
+#0 /var/www/html/vendor/composer/ClassLoader.php(322): Composer\Autoload\includeFile('/var/www/html/v...')
+#1 [internal function]: Composer\Autoload\ClassLoader->loadClass('zacksleo\\yii2\\o...')
+#2 [internal function]: spl_autoload_call('zacksleo\\yii2\\o...')
+#3 /var/www/html/vendor/yiisoft/yii2/di/Container.php(424): ReflectionClass->__construct('zacksleo\\yii2\\o...')
+#4 /var/www/html/vendor/yiisoft/yii2/di/Container.php(364): yii\di\Container->getDependencies('zacksleo\\yii2\\o...')
+#5 /var/www/html/vendor/yiisoft/yii2/di/Container.php(156): yii\di\Container->build('zacksleo\\yii2\\o...', Array, Array)
+#6 /var/www/html/vendor/yiisoft/yii2/di/Container.php(174): yii\di\Container->get('zacksleo\\yii2\\o...', Array, Array)
+#7 /var/www/html/vendor/filsh/yii2-oauth2-server/Module.php(105): yii\di\Container->get('access_token')
+#8 /var/www/html/src/api/controllers/TokenController.php(24): filsh\yii2\oauth2server\Module->getServer()
+#9 [internal function]: zacksleo\yii2\oauth2\api\controllers\TokenController->actionCreate()
+#10 /var/www/html/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#11 /var/www/html/vendor/yiisoft/yii2/base/Controller.php(156): yii\base\InlineAction->runWithParams(Array)
+#12 /var/www/html/vendor/yiisoft/yii2/base/Module.php(523): yii\base\Controller->runAction('create', Array)
+#13 /var/www/html/vendor/yiisoft/yii2/web/Application.php(102): yii\base\Module->runAction('token/create', Array)
+#14 /var/www/html/vendor/yiisoft/yii2/base/Application.php(380): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 /var/www/html/tests/_app/api/web/index.php(17): yii\base\Application->run()
+#16 {main}
+2018-01-20 13:57:20 [127.0.0.1][-][-][info][application] $_SERVER = [
+    'DOCUMENT_ROOT' => '/var/www/html/tests/_app/api/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '54054'
+    'SERVER_SOFTWARE' => 'PHP 7.1.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '80'
+    'REQUEST_URI' => '/api/tokens'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/var/www/html/tests/_app/api/web/index.php'
+    'PATH_INFO' => '/api/tokens'
+    'PHP_SELF' => '/index.php/api/tokens'
+    'HTTP_HOST' => 'localhost:80'
+    'HTTP_USER_AGENT' => 'Symfony BrowserKit'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'CONTENT_LENGTH' => '91'
+    'HTTP_CONTENT_LENGTH' => '91'
+    'REQUEST_TIME_FLOAT' => 1516456640.0232
+    'REQUEST_TIME' => 1516456640
+    'argv' => []
+    'argc' => 0
+    'YII_DEBUG' => '1'
+    'YII_ENV' => 'dev'
+    'COOKIE_VALIDATION_KEY' => 'SeCrEt_DeV_Key--DO-NOT-USE-IN-PRODUCTION!'
+    'DB_DSN' => 'mysql:host=mysql;dbname=web'
+    'DB_USER' => 'web'
+    'DB_PASSWORD' => 'web'
+    'TOKEN_REDIS_HOST' => 'redis'
+    'TOKEN_REDIS_PORT' => '6379'
+    'TOKEN_REDIS_DATABASE' => '0'
+    'TOKEN_REDIS_PASSWORD' => 'null'
+    'REDIS_HOST' => 'redis'
+    'REDIS_PORT' => '6379'
+    'REDIS_DATABASE' => '0'
+]
+2018-01-20 13:58:40 [127.0.0.1][-][-][trace][yii\base\Application::bootstrap] Bootstrap with filsh\yii2\oauth2server\Bootstrap::bootstrap()
+2018-01-20 13:58:40 [127.0.0.1][-][-][trace][yii\base\Module::getModule] Loading module: oauth2
+2018-01-20 13:58:40 [127.0.0.1][-][-][trace][yii\base\Application::bootstrap] Bootstrap with yii\log\Dispatcher
+2018-01-20 13:58:40 [127.0.0.1][-][-][trace][yii\web\UrlRule::parseRequest] Request parsed with URL rule: tokens
+2018-01-20 13:58:40 [127.0.0.1][-][-][trace][yii\rest\UrlRule::parseRequest] [
+    'rule' => 'POST tokens',
+    'match' => true,
+    'parent' => 'yii\\rest\\UrlRule',
+]
+2018-01-20 13:58:40 [127.0.0.1][-][-][trace][yii\web\UrlManager::parseRequest] [
+    'rule' => 'yii\\rest\\UrlRule',
+    'match' => true,
+    'parent' => null,
+]
+2018-01-20 13:58:40 [127.0.0.1][-][-][trace][yii\web\Application::handleRequest] Route requested: 'token/create'
+2018-01-20 13:58:40 [127.0.0.1][-][-][trace][yii\base\Controller::runAction] Route to run: token/create
+2018-01-20 13:58:40 [127.0.0.1][-][-][info][yii\filters\RateLimiter::beforeAction] Rate limit skipped: user not logged in.
+2018-01-20 13:58:40 [127.0.0.1][-][-][trace][yii\base\InlineAction::runWithParams] Running action: api\controllers\TokenController::actionCreate()
+2018-01-20 13:58:40 [127.0.0.1][-][-][info][yii\db\Connection::open] Opening DB connection: mysql:host=mysql;dbname=web
+    in /var/www/html/vendor/filsh/yii2-oauth2-server/storage/Pdo.php:25
+    in /var/www/html/vendor/filsh/yii2-oauth2-server/Module.php:105
+    in /var/www/html/src/api/controllers/TokenController.php:24
+2018-01-20 13:58:40 [127.0.0.1][-][-][info][yii\db\Command::query] SHOW FULL COLUMNS FROM `user`
+    in /var/www/html/tests/_app/common/models/User.php:56
+    in /var/www/html/src/common/models/storage/AccessToken.php:24
+    in /var/www/html/vendor/bshaffer/oauth2-server-php/src/OAuth2/ResponseType/AccessToken.php:103
+2018-01-20 13:58:40 [127.0.0.1][-][-][info][yii\db\Command::query] SELECT
+    kcu.constraint_name,
+    kcu.column_name,
+    kcu.referenced_table_name,
+    kcu.referenced_column_name
+FROM information_schema.referential_constraints AS rc
+JOIN information_schema.key_column_usage AS kcu ON
+    (
+        kcu.constraint_catalog = rc.constraint_catalog OR
+        (kcu.constraint_catalog IS NULL AND rc.constraint_catalog IS NULL)
+    ) AND
+    kcu.constraint_schema = rc.constraint_schema AND
+    kcu.constraint_name = rc.constraint_name
+WHERE rc.constraint_schema = database() AND kcu.table_schema = database()
+AND rc.table_name = 'user' AND kcu.table_name = 'user'
+    in /var/www/html/tests/_app/common/models/User.php:56
+    in /var/www/html/src/common/models/storage/AccessToken.php:24
+    in /var/www/html/vendor/bshaffer/oauth2-server-php/src/OAuth2/ResponseType/AccessToken.php:103
+2018-01-20 13:58:40 [127.0.0.1][-][-][info][yii\db\Command::query] SELECT * FROM `user` WHERE `id`='1'
+    in /var/www/html/tests/_app/common/models/User.php:56
+    in /var/www/html/src/common/models/storage/AccessToken.php:24
+    in /var/www/html/vendor/bshaffer/oauth2-server-php/src/OAuth2/ResponseType/AccessToken.php:103
+2018-01-20 13:58:40 [127.0.0.1][-][-][info][application] $_SERVER = [
+    'DOCUMENT_ROOT' => '/var/www/html/tests/_app/api/web'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'REMOTE_PORT' => '54064'
+    'SERVER_SOFTWARE' => 'PHP 7.1.9 Development Server'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'SERVER_NAME' => 'localhost'
+    'SERVER_PORT' => '80'
+    'REQUEST_URI' => '/api/tokens'
+    'REQUEST_METHOD' => 'POST'
+    'SCRIPT_NAME' => '/index.php'
+    'SCRIPT_FILENAME' => '/var/www/html/tests/_app/api/web/index.php'
+    'PATH_INFO' => '/api/tokens'
+    'PHP_SELF' => '/index.php/api/tokens'
+    'HTTP_HOST' => 'localhost:80'
+    'HTTP_USER_AGENT' => 'Symfony BrowserKit'
+    'CONTENT_TYPE' => 'application/json'
+    'HTTP_CONTENT_TYPE' => 'application/json'
+    'CONTENT_LENGTH' => '91'
+    'HTTP_CONTENT_LENGTH' => '91'
+    'REQUEST_TIME_FLOAT' => 1516456720.0494
+    'REQUEST_TIME' => 1516456720
+    'argv' => []
+    'argc' => 0
+    'YII_DEBUG' => '1'
+    'YII_ENV' => 'dev'
+    'COOKIE_VALIDATION_KEY' => 'SeCrEt_DeV_Key--DO-NOT-USE-IN-PRODUCTION!'
+    'DB_DSN' => 'mysql:host=mysql;dbname=web'
+    'DB_USER' => 'web'
+    'DB_PASSWORD' => 'web'
+    'TOKEN_REDIS_HOST' => 'redis'
+    'TOKEN_REDIS_PORT' => '6379'
+    'TOKEN_REDIS_DATABASE' => '0'
+    'TOKEN_REDIS_PASSWORD' => 'null'
+    'REDIS_HOST' => 'redis'
+    'REDIS_PORT' => '6379'
+    'REDIS_DATABASE' => '0'
+]

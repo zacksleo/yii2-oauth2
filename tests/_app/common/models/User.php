@@ -1,10 +1,12 @@
 <?php
-namespace app\common\models;
 
+namespace common\models;
+
+use OAuth2\Storage\UserCredentialsInterface;
 use yii;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
-use yii\behaviors\TimestampBehavior;
+use filsh\yii2\oauth2server\exceptions\HttpException;
 
 /**
  * User model
@@ -14,7 +16,7 @@ use yii\behaviors\TimestampBehavior;
  * @property string $created_at
  * @property string $updated_at
  */
-class User extends ActiveRecord implements IdentityInterface
+class User extends ActiveRecord implements IdentityInterface, UserCredentialsInterface
 {
     /**
      * @inheritdoc
@@ -30,9 +32,8 @@ class User extends ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            ['phone', 'string', 'max' => 15],
-            [['phone'], 'match', 'pattern' => '/^[1][3578][0-9]{9}$/'],
-            ['union_id', 'unique'],
+            ['username', 'string', 'max' => 15],
+            ['password', 'string', 'max' => 15],
         ];
     }
 
@@ -43,21 +44,6 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             'id' => Yii::t('app', 'id'),
-            'phone' => Yii::t('app', 'phone'),
-            'create_time' => Yii::t('app', 'create time'),
-            'update_time' => Yii::t('app', 'update time'),
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'timestamp' => [
-                'class' => TimestampBehavior::className(),
-            ],
         ];
     }
 
@@ -74,7 +60,11 @@ class User extends ActiveRecord implements IdentityInterface
      */
     public static function findIdentityByAccessToken($token, $type = null)
     {
-        throw new yii\web\UnauthorizedHttpException('Unauthorized');
+        /* @var \filsh\yii2\oauth2server\Module $module */
+        $module = Yii::$app->getModule('oauth2');
+        $accessToken = $module->getServer()->getStorage('access_token')->getAccessToken($token);
+        //$token = $module->getServer()->getResourceController()->getToken();
+        return !empty($accessToken['user_id']) ? static::findIdentity($accessToken['user_id']) : null;
     }
 
     /**
@@ -91,6 +81,37 @@ class User extends ActiveRecord implements IdentityInterface
     }
 
     /**
+     * Implemented for Oauth2 Interface
+     * @param $username
+     * @param $password
+     * @return bool
+     * @throws HttpException
+     */
+    public function checkUserCredentials($username, $password)
+    {
+        /* @var $user \common\models\User */
+        $user = static::find()->where(['username' => $username])->one();
+        if (empty($user)) {
+            throw new HttpException(401, 'user does not exist');
+        }
+        return $user->validatePassword($password);
+    }
+
+    /**
+     * Implemented for Oauth2 Interface
+     * @param $username
+     * @return array
+     */
+    public function getUserDetails($username)
+    {
+        /* @var $user \common\models\User */
+        $user = static::find()->where(['username' => $username])->one();
+        return [
+            'user_id' => $user->getId()
+        ];
+    }
+
+    /**
      * @inheritdoc
      */
     public function validateAuthKey($authKey)
@@ -104,5 +125,10 @@ class User extends ActiveRecord implements IdentityInterface
     public function validatePassword($password)
     {
         return true;
+    }
+
+    public function getUnionId()
+    {
+        return $this->id;
     }
 }

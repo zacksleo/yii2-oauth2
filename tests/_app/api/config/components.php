@@ -10,10 +10,8 @@ return [
         'errorAction' => 'site/error',
     ],
     'user' => [
-        'identityClass' => 'app\models\User',
-        'enableAutoLogin' => true,
-        'loginUrl' => ['site/login'],
-        'identityCookie' => ['name' => '_identity-backend', 'httpOnly' => true, 'path' => '/api'],
+        'class' => 'yii\web\User',
+        'identityClass' => 'common\models\User',
     ],
     'urlManager' => [
         'enablePrettyUrl' => true,
@@ -22,7 +20,7 @@ return [
         'rules' => [
             [
                 'class' => 'yii\rest\UrlRule',
-                'controller' => 'v1/token',
+                'controller' => 'token',
                 'only' => ['create', 'options'],
             ],
         ]
