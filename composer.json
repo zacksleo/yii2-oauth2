@@ -18,7 +18,8 @@
   },
   "require-dev": {
     "codeception/codeception": "^2.3",
-    "vlucas/phpdotenv": "^2.4"
+    "vlucas/phpdotenv": "^2.4",
+    "flow/jsonpath": "^0.3.4"
   },
   "autoload": {
     "psr-4": {
