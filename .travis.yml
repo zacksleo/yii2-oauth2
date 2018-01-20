@@ -18,6 +18,6 @@ install:
 before_script:
 - travis_retry mysql -e 'CREATE DATABASE web;'
 - php tests/_app/yii.php migrate --interactive=0
-- php -S localhost:80001 --docroot tests/_app/api/web
+- php -S localhost:8080 --docroot tests/_app/api/web &>/dev/null&
 script:
 - ./vendor/bin/codecept run -c tests

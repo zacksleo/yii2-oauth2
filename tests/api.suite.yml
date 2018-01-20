@@ -12,7 +12,7 @@ modules:
             cleanup: false
             reconnect: true
         - REST:
-            url: http://localhost:80/api/
+            url: http://localhost:8080/api/
             depends: PhpBrowser
             part: Json
         
