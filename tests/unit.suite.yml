@@ -9,7 +9,7 @@ modules:
             part: [fixtures,orm]
             configFile: '_app/config/test-local.php'
         - Db:
-            dsn: mysql:host=localhost:3306;dbname=web;charset=utf8
+            dsn: mysql:host=localhost;dbname=web;charset=utf8
             user: root
             password: ''
             populate: true
