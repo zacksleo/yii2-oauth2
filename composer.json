@@ -11,12 +11,15 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "filsh/yii2-oauth2-server": "2.0.1.x-dev",
     "monsterhunter/oauth2-redis": "^0.0.5",
-    "ramsey/uuid": "^3.7"
+    "ramsey/uuid": "^3.7",
+    "yiisoft/yii2": "2.0.12",
+    "filsh/yii2-oauth2-server": "2.0.1.x-dev"
   },
   "require-dev": {
-    "codeception/codeception": "^2.3"
+    "codeception/codeception": "^2.3",
+    "vlucas/phpdotenv": "^2.4",
+    "flow/jsonpath": "^0.3.4"
   },
   "autoload": {
     "psr-4": {

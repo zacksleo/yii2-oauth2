@@ -6,7 +6,7 @@
  * Time: 下午3:45
  */
 
-namespace zacksleo\yii2\oauth2\common\predis;
+namespace zacksleo\yii2\oauth2\common\helpers;
 
 use monsterhunter\oauth2\redis\RedisClient;
 

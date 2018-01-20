@@ -16,7 +16,7 @@ class OauthClientsQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\OauthClients[]|array
+     * @return \zacksleo\yii2\oauth2\common\models\OauthClients[]|array
      */
     public function all($db = null)
     {
@@ -25,7 +25,7 @@ class OauthClientsQuery extends \yii\db\ActiveQuery
 
     /**
      * @inheritdoc
-     * @return \app\models\OauthClients|array|null
+     * @return \zacksleo\yii2\oauth2\common\models\OauthClients|array|null
      */
     public function one($db = null)
     {

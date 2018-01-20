@@ -12,7 +12,7 @@ class TokenCest extends CestBase
     {
         $I->wantTo('客户端模式获取令牌');
         $I->haveHttpHeader('Content-Type', 'application/json');
-        $I->sendPOST('client/v1/tokens', [
+        $I->sendPOST('tokens', [
             'client_id' => $this->clientId,
             'client_secret' => $this->clientSecret,
             'grant_type' => 'client_credentials'
@@ -31,7 +31,7 @@ class TokenCest extends CestBase
     {
         $I->wantTo('密码模式获取令牌');
         $I->haveHttpHeader('Content-Type', 'application/json');
-        $I->sendPOST('client/v1/tokens', [
+        $I->sendPOST('tokens', [
             'client_id' => $this->clientId,
             'client_secret' => $this->clientSecret,
             'username' => $this->username,
@@ -57,7 +57,7 @@ class TokenCest extends CestBase
         $I->wantTo('密码模式获取令牌：用户不存在时的提示');
         $I->haveHttpHeader('Content-Type', 'application/json');
         $I->haveHttpHeader('Accept-Language', 'en-US');
-        $I->sendPOST('client/v1/tokens', [
+        $I->sendPOST('tokens', [
             'client_id' => $this->clientId,
             'client_secret' => $this->clientSecret,
             'username' => 'userNotExist',

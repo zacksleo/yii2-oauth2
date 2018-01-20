@@ -7,6 +7,13 @@ modules:
     enabled:
         - Yii2:
             part: [fixtures,orm]
-            configFile: '_app/config/test.php'
+            configFile: '_app/config/test-local.php'
+        - Db:
+            dsn: mysql:host=localhost;dbname=web;charset=utf8
+            user: root
+            password: ''
+            populate: true
+            cleanup: false
+            reconnect: true
         - Asserts
 
