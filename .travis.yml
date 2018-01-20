@@ -1,23 +1,35 @@
 language: php
+
 matrix:
   fast_finish: true
+
 php:
 - 7.1
+
 sudo: false
+
 cache:
   directories:
   - "$HOME/.composer/cache"
   - vendor
+
 services:
 - mysql
 - redis-server
+
 install:
 - travis_retry composer self-update
 - travis_retry composer config -g github-oauth.github.com caf16441da5ba578b34a765e67e3bf2ad1941389
 - travis_retry composer install --prefer-dist --no-interaction
+
 before_script:
 - travis_retry mysql -e 'CREATE DATABASE web;'
 - php tests/_app/yii.php migrate --interactive=0
 - php -S localhost:8080 --docroot tests/_app/api/web &>/dev/null&
+
 script:
-- ./vendor/bin/codecept run -c tests
+- ./vendor/bin/codecept run -c tests --coverage --coverage-xml=coverage.clover
+
+after_script:
+- wget https://scrutinizer-ci.com/ocular.phar
+- php ocular.phar code-coverage:upload --format=php-clover ./tests/_output/coverage.clover

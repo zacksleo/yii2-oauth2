@@ -16,4 +16,17 @@ modules:
     config:
         Yii2:
             configFile: '_app/common/config/test-local.php'
+coverage:
+    enabled: true
+    remote: false
+    include:
+        - ../src/common/models/*
+        - ../src/common/behaviors/*
+        - ../src/common/helpers/*
+        - ../src/common/queries/*
+    exclude:
+        - ../src/backend/*
+        - ../src/messages/*
+        - ../src/migrations/*
+        - ../src/api/*
 
