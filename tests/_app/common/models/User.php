@@ -7,6 +7,7 @@ use yii;
 use yii\db\ActiveRecord;
 use yii\web\IdentityInterface;
 use filsh\yii2\oauth2server\exceptions\HttpException;
+use zacksleo\yii2\oauth2\common\behaviors\UserRedisBehavior;
 
 /**
  * User model
@@ -44,6 +45,13 @@ class User extends ActiveRecord implements IdentityInterface, UserCredentialsInt
     {
         return [
             'id' => Yii::t('app', 'id'),
+        ];
+    }
+
+    public function behaviors()
+    {
+        return [
+            UserRedisBehavior::className(),
         ];
     }
 

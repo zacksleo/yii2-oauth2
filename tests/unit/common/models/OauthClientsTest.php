@@ -67,4 +67,11 @@ class OauthClientsTest extends TestCase
         $client = $this->tester->grabFixture('clients', 'default');
         $this->assertEquals(1, $client->getUserCount());
     }
+
+    public function testDelete()
+    {
+        /* @var $client OauthClients */
+        $client = $this->tester->grabFixture('clients', 'default');
+        $this->assertEquals(1, $client->delete());
+    }
 }

@@ -19,10 +19,9 @@ class UserRedisBehavior extends Behavior
     {
         /* @var $user \common\models\User */
         $user = $this->owner;
-        if (!empty($model)) {
+        if (!empty($user)) {
             //删除缓存
             Predis::getInstance()->getClient()->deleteUserToken($user->id);
-            $model->delete();
         }
     }
 }
