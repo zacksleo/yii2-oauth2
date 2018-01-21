@@ -80,8 +80,6 @@ class CestBase
         $this->clientId = 'client_id';
         $this->clientSecret = 'client_secret';
         $this->username = 'username';
-        $this->password = 'pa55w0rd';
-        $this->phone = '18888888888';
-        $this->smsCode = '123456';
+        $this->password = 'password';
     }
 }
