@@ -14,10 +14,24 @@ yii2 oauth2 module based on [yii2-oauth2-server](https://github.com/Filsh/yii2-o
 [![Build Status](https://scrutinizer-ci.com/g/zacksleo/yii2-oauth2/badges/build.png?b=master)](https://scrutinizer-ci.com/g/zacksleo/yii2-oauth2/build-status/master)
 
 
+## Install
+
+```
+composer install zacksleo/yii2-oauth2
+
+```
+
+## Migration Database
+
+
+```
+./yii migrate --migrationPath=@vendor/zacksleo/yii2-oauth2/migrations
+
+```
+
 ## Config module
 
 ### for API or frontend
-
 
 ```php
 
@@ -61,6 +75,30 @@ yii2 oauth2 module based on [yii2-oauth2-server](https://github.com/Filsh/yii2-o
           'class' => 'zacksleo\yii2\oauth2\backend\Module',
       ]
   ]
+
+```
+
+## Token Controller
+
+```
+<?php
+
+namespace api\modules\v1\controllers;
+
+class TokenController extends \zacksleo\yii2\oauth2\api\controllers\TokenController
+{
+
+}
+
+```
+
+## Api with Token Authorization
+
+```
+class ResourceController extends \zacksleo\yii2\oauth2\api\controllers\Oauth2Controller 
+{
+
+}
 
 ```
 
