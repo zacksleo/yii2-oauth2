@@ -1,6 +1,7 @@
 .idea/
 /vendor/
 package.json
+package-lock.json
 node_modules
 composer.lock
 tests/_app/db.local.php

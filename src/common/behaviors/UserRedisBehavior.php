@@ -2,7 +2,7 @@
 
 namespace zacksleo\yii2\oauth2\common\behaviors;
 
-use zacksleo\yii2\oauth2\common\predis\Predis;
+use zacksleo\yii2\oauth2\common\helpers\Predis;
 use yii\base\Behavior;
 use yii\db\ActiveRecord;
 
@@ -19,10 +19,9 @@ class UserRedisBehavior extends Behavior
     {
         /* @var $user \common\models\User */
         $user = $this->owner;
-        if (!empty($model)) {
+        if (!empty($user)) {
             //删除缓存
             Predis::getInstance()->getClient()->deleteUserToken($user->id);
-            $model->delete();
         }
     }
 }

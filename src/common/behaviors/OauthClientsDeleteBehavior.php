@@ -2,8 +2,8 @@
 
 namespace zacksleo\yii2\oauth2\common\behaviors;
 
-use zacksleo\yii2\oauth2\common\predis\Predis;
-use common\models\OauthClients;
+use zacksleo\yii2\oauth2\common\helpers\Predis;
+use zacksleo\yii2\oauth2\common\models\OauthClients;
 use filsh\yii2\oauth2server\models\OauthAuthorizationCodes;
 use filsh\yii2\oauth2server\models\OauthRefreshTokens;
 use yii\base\Behavior;

@@ -2,12 +2,12 @@
 
 namespace zacksleo\yii2\oauth2\common\behaviors;
 
-use zacksleo\yii2\oauth2\common\predis\Predis;
+use zacksleo\yii2\oauth2\common\helpers\Predis;
 use yii;
 use yii\base\Behavior;
 use yii\web\Controller;
-use common\models\storage\AccessToken;
-use common\models\OauthClients;
+use zacksleo\yii2\oauth2\common\models\storage\AccessToken;
+use zacksleo\yii2\oauth2\common\models\OauthClients;
 
 /**
  * Class TokenBehavior

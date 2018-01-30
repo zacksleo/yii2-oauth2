@@ -3,16 +3,16 @@ bootstrap: false
 modules:
     enabled:
         - Yii2:
-            configFile: '_app/common/config/test.php'
+            configFile: '_app/common/config/test-local.php'
         - Db:
-            dsn: mysql:host=mysql;dbname=web
+            dsn: mysql:host=localhost;dbname=web;charset=utf8
             user: root
             password: ''
             populate: true
             cleanup: false
             reconnect: true
         - REST:
-            url: http://localhost:80/api/
+            url: http://localhost:8080/api/
             depends: PhpBrowser
             part: Json
         
