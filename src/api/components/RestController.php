@@ -36,9 +36,6 @@ class RestController extends Controller
         ]);
         $auth = $behaviors['authenticator'];
         unset($behaviors['authenticator']);
-        $behaviors['corsFilter'] = [
-            'class' => \yii\filters\Cors::className(),
-        ];
         $behaviors['authenticator'] = $auth;
         $behaviors['authenticator']['except'] = ['options'];
         return $behaviors;
