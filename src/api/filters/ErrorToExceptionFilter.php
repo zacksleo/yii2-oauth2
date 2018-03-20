@@ -44,7 +44,7 @@ class ErrorToExceptionFilter extends \yii\base\Behavior
     {
         $message = ApiModule::t('oauth2server', $response->getParameter('error_description'));
         if ($message == 'Invalid username and password combination') {
-            $message = 'Incorrect account or password';
+            $message = ApiModule::t('oauth2server', 'Incorrect account or password');
         }
         if ($message === null) {
             $message = ApiModule::t('oauth2server', 'An internal server error occurred.');
