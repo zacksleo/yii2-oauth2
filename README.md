@@ -80,7 +80,7 @@ composer install zacksleo/yii2-oauth2
 
 ## Token Controller
 
-```
+```php
 <?php
 
 namespace api\modules\v1\controllers;
@@ -90,7 +90,7 @@ class TokenController extends \zacksleo\yii2\oauth2\api\controllers\TokenControl
 
 }
 
-```
+```php
 
 ## Api with Token Authorization
 
@@ -104,7 +104,7 @@ class ResourceController extends \zacksleo\yii2\oauth2\api\controllers\Oauth2Con
 
 ## Config common\models\User
 
-```
+```php
 <?php
 
 namespace common\models;
