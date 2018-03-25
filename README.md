@@ -38,6 +38,17 @@ composer install zacksleo/yii2-oauth2
  'modules' => [
      'oauth2' => [
          'class' => 'filsh\yii2\oauth2server\Module',
+         /* Fix Yii2 2.0.13+ Incompatible Issue
+          * @see https://github.com/Filsh/yii2-oauth2-server/issues/132
+          */
+         'components' => [
+            'request' => function () {
+                return \filsh\yii2\oauth2server\Request::createFromGlobals();
+            },
+            'response' => [
+                'class' => \filsh\yii2\oauth2server\Response::class,
+            ],
+         ],
          'tokenParamName' => 'access_token',
          'tokenAccessLifetime' => 3600 * 24 * 7,
          'storageMap' => [
