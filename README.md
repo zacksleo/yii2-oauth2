@@ -90,11 +90,11 @@ class TokenController extends \zacksleo\yii2\oauth2\api\controllers\TokenControl
 
 }
 
-```php
+```
 
 ## Api with Token Authorization
 
-```
+```php
 class ResourceController extends \zacksleo\yii2\oauth2\api\controllers\Oauth2Controller 
 {
 
