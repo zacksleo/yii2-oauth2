@@ -28,7 +28,7 @@ before_script:
 - php -S localhost:8080 --docroot tests/_app/api/web &>/dev/null&
 
 script:
-- ./vendor/bin/codecept run api -c tests
+- ./vendor/bin/codecept run api -c tests --debug
 - ./vendor/bin/codecept run unit -c tests --coverage --coverage-xml=coverage.clover
 
 after_script:
