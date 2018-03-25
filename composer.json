@@ -13,7 +13,7 @@
   "require": {
     "monsterhunter/oauth2-redis": "^0.0.5",
     "ramsey/uuid": "^3.7",
-    "yiisoft/yii2": "2.0.12",
+    "yiisoft/yii2": "^2.0",
     "filsh/yii2-oauth2-server": "2.0.1.x-dev"
   },
   "require-dev": {

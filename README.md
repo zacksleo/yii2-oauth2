@@ -102,3 +102,86 @@ class ResourceController extends \zacksleo\yii2\oauth2\api\controllers\Oauth2Con
 
 ```
 
+## Config common\models\User
+
+```
+<?php
+
+namespace common\models;
+
+use OAuth2\Storage\UserCredentialsInterface;
+use yii;
+use yii\db\ActiveRecord;
+use yii\web\IdentityInterface;
+use yii\behaviors\TimestampBehavior;
+use filsh\yii2\oauth2server\exceptions\HttpException;
+use zacksleo\yii2\oauth2\common\helpers\Predis;
+
+/**
+ * User model
+ *
+ * @property integer $id
+ * @property string $phone
+ * @property string $created_at
+ * @property string $updated_at
+ * @property string $union_id
+ */
+class User extends ActiveRecord implements IdentityInterface, UserCredentialsInterface
+{
+    /**
+     * @inheritdoc
+     */
+    public static function findIdentity($id)
+    {
+        return static::findOne($id);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public static function findIdentityByAccessToken($token, $type = null)
+    {
+        $oauthAccessToken = Predis::getInstance()->getClient()->getToken($token);
+        if (empty($oauthAccessToken)) {
+            throw new yii\web\UnauthorizedHttpException('Unauthorized');
+        }
+        $model = static::findOne(['union_id' => $oauthAccessToken['union_id']]);
+        return $model;
+    }
+
+    /**
+     * Implemented for Oauth2 Interface
+     * @param $username
+     * @param $password
+     * @return bool
+     * @throws HttpException
+     */
+    public function checkUserCredentials($username, $password)
+    {
+    }
+
+    /**
+     * Implemented for Oauth2 Interface
+     * @param $username
+     * @return array
+     */
+    public function getUserDetails($username)
+    {
+     }
+
+    /**
+     * @inheritdoc
+     */
+    public function getId()
+    {
+        return $this->getPrimaryKey();
+    }
+
+    public function getUnionId()
+    {
+        return $this->union_id;
+    }
+}
+
+```
+
