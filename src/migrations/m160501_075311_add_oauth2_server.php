@@ -43,7 +43,7 @@ class m160501_075311_add_oauth2_server extends \yii\db\Migration
         try {
             $this->createTable('{{%oauth_clients}}', [
                 'client_name' => Schema::TYPE_STRING . '(36) NOT NULL COMMENT "客户端名称"',
-                'client_icon' => $this->string()->notNull()->comment('图标'),
+                'client_icon' => $this->string()->comment('图标'),
                 'client_id' => Schema::TYPE_STRING . '(36) NOT NULL COMMENT "客户端ID"',
                 'client_secret' => Schema::TYPE_STRING . '(32) DEFAULT NULL COMMENT "客户端密钥"',
                 'redirect_uri' => Schema::TYPE_STRING . '(1000) NOT NULL DEFAULT "" COMMENT "回跳地址"',
