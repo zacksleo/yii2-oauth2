@@ -35,8 +35,6 @@ class Module extends BaseModule
             'basePath' => '@vendor/zacksleo/yii2-oauth2/src/messages',
             'fileMap' => [
                 'zacksleo/yii2/oauth2/core' => 'core.php',
-                'zacksleo/yii2/oauth2/user' => 'user.php',
-                'zacksleo/yii2/oauth2/client' => 'client.php',
                 'zacksleo/yii2/oauth2/oauth2server' => 'oauth2server.php',
             ],
         ];

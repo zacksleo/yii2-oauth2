@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use zacksleo\yii2\oauth2\backend\Module;
 
 /* @var $this yii\web\View */
 /* @var $model zacksleo\yii2\oauth2\common\models\OauthClients */
@@ -28,7 +29,7 @@ use yii\widgets\ActiveForm;
 
     <div class="form-group">
         <?= Html::submitButton(
-            $model->isNewRecord ? Yii::t('app', 'Create') : Yii::t('app', 'Update'),
+            $model->isNewRecord ? Module::t('core', 'Create') : Module::t('core', 'Update'),
             [
                 'class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary'
             ]
